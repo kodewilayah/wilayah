@@ -100,7 +100,7 @@ header('Pragma: no-cache');*/
                     <select name="prop" id="prop" class="w3-select w3-hover-theme" onchange="ajax(this.value)" readonly>
                       <option value="">Pilih Provinsi</option>
                       <?php
-                      $query=$db->prepare("SELECT kode,nama FROM wilayah_1_2 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
+                      $query=$db->prepare("SELECT kode,nama FROM wilayah_level_1_2 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
                       $query->execute();
                       while ($data=$query->fetchObject()){
                         echo '<option value="'.$data->kode.'">'.$data->nama.'</option>';
